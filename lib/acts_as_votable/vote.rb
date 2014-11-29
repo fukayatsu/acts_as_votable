@@ -12,7 +12,7 @@ module ActsAsVotable
         :vote_flag, :vote_scope
     end
 
-    belongs_to :votable, :polymorphic => true
+    belongs_to :votable, :polymorphic => true, :touch => true
     belongs_to :voter, :polymorphic => true
 
     scope :up, lambda{ where(:vote_flag => true) }
@@ -26,4 +26,3 @@ module ActsAsVotable
   end
 
 end
-
